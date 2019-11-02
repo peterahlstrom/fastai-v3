@@ -12,8 +12,8 @@ from starlette.staticfiles import StaticFiles
 # export_file_url = 'https://www.dropbox.com/s/6bgq8t6yextloqp/export.pkl?raw=1'
 # export_file_url = 'https://drive.google.com/open?id=1qUGhD2f8YyVfOxhdyUOZJIktBWAgeomy'
 export_file_url = 'https://drive.google.com/open?id=1-3vVyfmwXYFOYPCyLAaWwAbiaBHo1lee' #pkl-file
-# export_file_name = 'export.pkl'
-export_file_name = 'boris_vs_harry.pkl'
+export_file_name = 'export.pkl'
+# export_file_name = 'boris_vs_harry.pkl'
 
 classes = ['boris_johnson', 'dynamitharry']
 path = Path(__file__).parent
