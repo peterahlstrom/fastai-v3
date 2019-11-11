@@ -16,7 +16,7 @@ export_file_url = 'https://drive.google.com/uc?export=download&id=1Iy8wD51J2ZMnd
 export_file_name = 'export.pkl'
 # export_file_name = 'boris_vs_harry.pkl'
 
-classes = ['boris_johnson', 'dynamitharry']
+classes = ['tollare','setter']
 path = Path(__file__).parent
 
 app = Starlette()
