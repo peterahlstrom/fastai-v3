@@ -16,7 +16,8 @@ export_file_url = 'https://drive.google.com/uc?export=download&id=1Iy8wD51J2ZMnd
 export_file_name = 'export.pkl'
 # export_file_name = 'boris_vs_harry.pkl'
 
-classes = ['tollare','setter']
+
+classes = ['setter','tollare']
 path = Path(__file__).parent
 
 app = Starlette()
@@ -64,9 +65,13 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    prediction = learn.predict(img)[0]
-    return JSONResponse({'result': str(prediction)})
-
+    prediction = learn.predict(img)
+    print(learn.predict(img))
+    resp = JSONResponse({'result': str(prediction[0]),
+                        'setter': "{:.1f}".format(prediction[2][0].item()*100),
+                        'tollare': "{:.1f}".format(prediction[2][1].item()*100),
+                        })
+    return resp
 
 if __name__ == '__main__':
     if 'serve' in sys.argv:
